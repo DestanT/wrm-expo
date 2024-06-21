@@ -34,7 +34,12 @@
           "fonts": ["./assets/fonts/SpaceMono-Regular.ttf"]
         }
       ],
-      "expo-secure-store"
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow $(We Rate Music) to access your Face ID biometric data."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
