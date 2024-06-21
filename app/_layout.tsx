@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Stack } from 'expo-router';
+import { SessionProvider } from '@/contexts/AuthContext';
+import { Slot } from 'expo-router';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import 'react-native-reanimated';
@@ -27,13 +28,12 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <GestureHandlerRootView onLayout={onLayoutRootView}>
-        <Stack>
-          {/* <Stack.Screen name='index' options={{ headerShown: false }} /> */}
-          <Stack.Screen name='+not-found' />
-        </Stack>
-      </GestureHandlerRootView>
-    </ThemeProvider>
+    <SessionProvider>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <GestureHandlerRootView onLayout={onLayoutRootView}>
+          <Slot />
+        </GestureHandlerRootView>
+      </ThemeProvider>
+    </SessionProvider>
   );
 }
