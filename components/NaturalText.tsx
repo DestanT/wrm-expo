@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     transform: [{ rotate: '-2deg' }],
-    width: '40%',
+    width: '80%',
     flexWrap: 'wrap',
   },
   titlePositionMobile: {
