@@ -3,7 +3,7 @@ import NaturalText from './NaturalText';
 
 type CassetteProps = {
   title: string;
-  style?: ViewStyle;
+  style?: ViewStyle | null;
 };
 
 export default function Cassette({ title, style }: CassetteProps) {
