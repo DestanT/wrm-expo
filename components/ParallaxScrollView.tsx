@@ -54,7 +54,7 @@ export default function ParallaxScrollView({ children, headerBackgroundColor }: 
           ]}
         >
           <ImageBackground
-            source={require('@/assets/images/cassette-top.png')}
+            source={require('@/assets/images/cassette-player-top.png')}
             style={headerImageStyle}
             resizeMode='cover'
           ></ImageBackground>
