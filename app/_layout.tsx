@@ -15,6 +15,7 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [fontsLoaded, fontError] = useFonts({
     SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
+    IndieFlower: require('@/assets/fonts/IndieFlower.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {

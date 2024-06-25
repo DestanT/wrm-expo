@@ -34,7 +34,7 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/SpaceMono-Regular.ttf"]
+          "fonts": ["./assets/fonts/SpaceMono-Regular.ttf", "./assets/fonts/IndieFlower.ttf"]
         }
       ],
       [
