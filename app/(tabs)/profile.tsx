@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignSelf: 'center',
+    paddingTop: 20,
   },
   mobileContainer: {
     flex: 1,
