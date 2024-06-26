@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   web: {
     height: 200,
     width: '100%',
+    paddingBottom: 220,
   },
   mobile: {
     height: 300,
