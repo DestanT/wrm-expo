@@ -1,5 +1,5 @@
 import { StyleSheet, ImageBackground, ViewStyle, Platform, Pressable } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, usePathname } from 'expo-router';
 import NaturalText from './NaturalText';
 
 type CassetteProps = {
@@ -10,9 +10,16 @@ type CassetteProps = {
 
 export default function Cassette({ title, style, id }: CassetteProps) {
   const router = useRouter();
+  const currentPath = usePathname();
 
   const handlePress = () => {
-    router.push(`/playlist/${id}`);
+    const targetPath = `/playlist/${id}`;
+
+    if (currentPath === targetPath) {
+      router.back();
+    } else {
+      router.push(`/playlist/${id}`);
+    }
   };
 
   const imageStyle =
