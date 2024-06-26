@@ -8,12 +8,13 @@ export default function ProfileScreen() {
     <ParallaxScrollView headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}>
       <View style={isWeb ? styles.webContainer : styles.mobileContainer}>
         <Cassette
+          id={1}
           title='Your Top Songs 2023 Your Top Songs 2023'
           style={isWeb ? styles.webCassette : null}
         />
-        <Cassette title='Album 2' style={isWeb ? styles.webCassette : null} />
-        <Cassette title='Album 3' style={isWeb ? styles.webCassette : null} />
-        <Cassette title='Album 4' style={isWeb ? styles.webCassette : null} />
+        <Cassette id={2} title='Album 2' style={isWeb ? styles.webCassette : null} />
+        <Cassette id={3} title='Album 3' style={isWeb ? styles.webCassette : null} />
+        <Cassette id={4} title='Album 4' style={isWeb ? styles.webCassette : null} />
       </View>
     </ParallaxScrollView>
   );
