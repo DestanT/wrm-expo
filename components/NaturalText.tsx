@@ -8,20 +8,20 @@ export default function NaturalText({ text }: NaturalTextProps) {
   const titlePosition =
     text.length > 19
       ? Platform.OS === 'web'
-        ? styles.longTitlePositionWeb
-        : styles.longTitlePositionMobile
+        ? styles.webLongTitlePosition
+        : styles.mobileLongTitlePosition
       : Platform.OS === 'web'
-        ? styles.titlePositionWeb
-        : styles.titlePositionMobile;
+        ? styles.webTitlePosition
+        : styles.mobileTitlePosition;
 
   const titleStyle =
     text.length > 19
       ? Platform.OS === 'web'
-        ? styles.longTitleWeb
-        : styles.longTitleMobile
+        ? styles.webLongTitle
+        : styles.mobileLongTitle
       : Platform.OS === 'web'
-        ? styles.titleWeb
-        : styles.titleMobile;
+        ? styles.webTitle
+        : styles.mobileTitle;
 
   return (
     <View style={titlePosition}>
@@ -31,21 +31,22 @@ export default function NaturalText({ text }: NaturalTextProps) {
 }
 
 const styles = StyleSheet.create({
-  titlePositionWeb: {
+  // Web styles
+  webTitlePosition: {
     position: 'absolute',
     top: 25,
     left: 0,
     right: 0,
     alignItems: 'center',
   },
-  longTitlePositionWeb: {
+  webLongTitlePosition: {
     position: 'absolute',
     top: 15,
     left: 0,
     right: 0,
     alignItems: 'center',
   },
-  titleWeb: {
+  webTitle: {
     fontFamily: 'IndieFlower',
     fontSize: 30,
     fontWeight: 'bold',
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     transform: [{ rotate: '-3deg' }],
   },
-  longTitleWeb: {
+  webLongTitle: {
     fontFamily: 'IndieFlower',
     fontSize: 28,
     fontWeight: 'bold',
@@ -65,21 +66,22 @@ const styles = StyleSheet.create({
     width: '80%',
     flexWrap: 'wrap',
   },
-  titlePositionMobile: {
+  // Mobile styles
+  mobileTitlePosition: {
     position: 'absolute',
     top: 50,
     left: 0,
     right: 0,
     alignItems: 'center',
   },
-  longTitlePositionMobile: {
+  mobileLongTitlePosition: {
     position: 'absolute',
     top: 45,
     left: 0,
     right: 0,
     alignItems: 'center',
   },
-  titleMobile: {
+  mobileTitle: {
     fontFamily: 'IndieFlower', // BUG: Currently not working on android
     fontSize: 30,
     fontWeight: 'bold',
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     transform: [{ rotate: '-3deg' }],
   },
-  longTitleMobile: {
+  mobileLongTitle: {
     fontFamily: 'IndieFlower', // BUG: Currently not working on android
     fontSize: 28,
     fontWeight: 'bold',
