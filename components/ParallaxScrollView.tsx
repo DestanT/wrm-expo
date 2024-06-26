@@ -38,10 +38,10 @@ export default function ParallaxScrollView({ children, headerBackgroundColor }: 
   });
 
   // Displays the cassette image centered on web and full width on mobile.
-  const headerImageStyle = Platform.OS === 'web' ? styles.headerImageWeb : styles.headerImageMobile;
+  const headerImageStyle = Platform.OS === 'web' ? styles.webHeaderImage : styles.mobileHeaderImage;
 
   // Centers the content on web and full width on mobile.
-  const contentStyle = Platform.OS === 'web' ? styles.contentStyleWeb : styles.contentStyleMobile;
+  const contentStyle = Platform.OS === 'web' ? styles.webContentStyle : styles.mobileContentStyle;
 
   return (
     <ThemedView style={styles.container}>
@@ -73,27 +73,25 @@ const styles = StyleSheet.create({
     height: 250,
     overflow: 'hidden',
   },
-  headerImageWeb: {
+  webHeaderImage: {
     width: 750,
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  headerImageMobile: {
+  mobileHeaderImage: {
     width: '100%',
     height: '100%',
   },
-  contentStyleWeb: {
-    flex: 1,
+  webContentStyle: {
     width: 750,
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: 32,
     gap: 16,
-    overflow: 'hidden',
   },
-  contentStyleMobile: {
+  mobileContentStyle: {
     flex: 1,
-    padding: 32,
+    padding: 16,
     gap: 16,
     overflow: 'hidden',
   },
