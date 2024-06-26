@@ -86,12 +86,10 @@ const styles = StyleSheet.create({
     width: 750,
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: 32,
     gap: 16,
   },
   mobileContentStyle: {
     flex: 1,
-    padding: 16,
     gap: 16,
     overflow: 'hidden',
   },
