@@ -8,6 +8,8 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { ThemedView } from '@/components/ThemedView';
+import { Avatar } from 'react-native-ui-lib';
+import Counter from './Counter';
 
 const HEADER_HEIGHT = 250;
 
@@ -57,7 +59,15 @@ export default function ParallaxScrollView({ children, headerBackgroundColor }: 
             source={require('@/assets/images/cassette-player-top.png')}
             style={headerImageStyle}
             resizeMode='cover'
-          ></ImageBackground>
+          >
+            <Avatar
+              source={{
+                uri: 'https://lh3.googleusercontent.com/-cw77lUnOvmI/AAAAAAAAAAI/AAAAAAAAAAA/WMNck32dKbc/s181-c/104220521160525129167.jpg',
+              }}
+              size={100}
+            />
+            <Counter inputText='1' />
+          </ImageBackground>
         </Animated.View>
         <ThemedView style={contentStyle}>{children}</ThemedView>
       </Animated.ScrollView>
