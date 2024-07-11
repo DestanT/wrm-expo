@@ -6,6 +6,7 @@ import Animated, {
   useAnimatedStyle,
   useScrollViewOffset,
 } from 'react-native-reanimated';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedView } from '@/components/ThemedView';
 import { Avatar } from 'react-native-ui-lib';
@@ -47,30 +48,32 @@ export default function ParallaxScrollView({ children, headerBackgroundColor }: 
 
   return (
     <ThemedView style={styles.container}>
-      <Animated.ScrollView ref={scrollRef} scrollEventThrottle={16}>
-        <Animated.View
-          style={[
-            styles.header,
-            { backgroundColor: headerBackgroundColor[colorScheme] },
-            headerAnimatedStyle,
-          ]}
-        >
-          <ImageBackground
-            source={require('@/assets/images/cassette-player-top.png')}
-            style={headerImageStyle}
-            resizeMode='cover'
+      <SafeAreaView>
+        <Animated.ScrollView ref={scrollRef} scrollEventThrottle={16}>
+          <Animated.View
+            style={[
+              styles.header,
+              { backgroundColor: headerBackgroundColor[colorScheme] },
+              headerAnimatedStyle,
+            ]}
           >
-            <Avatar
-              source={{
-                uri: 'https://lh3.googleusercontent.com/-cw77lUnOvmI/AAAAAAAAAAI/AAAAAAAAAAA/WMNck32dKbc/s181-c/104220521160525129167.jpg',
-              }}
-              size={100}
-            />
-            <Counter inputText='1' />
-          </ImageBackground>
-        </Animated.View>
-        <ThemedView style={contentStyle}>{children}</ThemedView>
-      </Animated.ScrollView>
+            <ImageBackground
+              source={require('@/assets/images/cassette-player-top.png')}
+              style={headerImageStyle}
+              resizeMode='stretch'
+            >
+              <Avatar
+                source={{
+                  uri: 'https://lh3.googleusercontent.com/-cw77lUnOvmI/AAAAAAAAAAI/AAAAAAAAAAA/WMNck32dKbc/s181-c/104220521160525129167.jpg',
+                }}
+                size={100}
+              />
+              <Counter inputText='1' />
+            </ImageBackground>
+          </Animated.View>
+          <ThemedView style={contentStyle}>{children}</ThemedView>
+        </Animated.ScrollView>
+      </SafeAreaView>
     </ThemedView>
   );
 }
